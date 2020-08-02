@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3e2e5e1b-b25c-454d-9439-743e05979421">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="xPath">
+		<![CDATA[/gamelist/game]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[@name]]></fieldDescription>
+	</field>
+	<field name="year" class="java.lang.String">
+		<fieldDescription><![CDATA[@year]]></fieldDescription>
+	</field>
+	<field name="chart" class="java.lang.String">
+		<fieldDescription><![CDATA[@chart]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/15)]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement uuid="dfc001ab-c3d2-406b-9c47-4369696e90a1" x="456" y="0" width="99" height="132"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement uuid="e6c877e4-558a-4eaa-8368-3b74c266e90b" mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000"/>
+				<staticText>
+					<reportElement uuid="0743d8b2-e9ab-4ce2-852a-f9646047f166" style="Title" x="0" y="0" width="370" height="66"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Report]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="3fd9b710-ec75-4d9b-9035-acc40cc1274e" style="SubTitle" x="157" y="66" width="249" height="29"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Marchuk L., 5307]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement uuid="d5884f09-303c-4186-bc2d-054bbb4e6f05" mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000"/>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="48be209c-c1cc-448d-a47c-cd8af57d64c0" mode="Opaque" x="2" y="0" width="197" height="26" forecolor="#CC0000"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="1.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="14"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="48be209c-c1cc-448d-a47c-cd8af57d64c0" mode="Opaque" x="199" y="0" width="183" height="26" forecolor="#CC0000"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="1.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="14"/>
+				</textElement>
+				<text><![CDATA[Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="48be209c-c1cc-448d-a47c-cd8af57d64c0" mode="Opaque" x="382" y="0" width="173" height="26" forecolor="#CC0000"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+					<topPen lineWidth="0.0" lineStyle="Dotted"/>
+					<leftPen lineWidth="1.0" lineStyle="Dotted"/>
+					<bottomPen lineWidth="0.0" lineStyle="Dotted"/>
+					<rightPen lineWidth="1.0" lineStyle="Dotted"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="14"/>
+				</textElement>
+				<text><![CDATA[Chart]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<frame>
+				<reportElement uuid="5739b3ff-3e04-4cb6-9259-310a01926610" style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+			</frame>
+			<textField>
+				<reportElement uuid="a4edbe10-94a4-4491-ade2-07990f73201e" mode="Opaque" x="2" y="0" width="197" height="18" forecolor="#000000"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Dotted" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dotted" lineColor="#CC0000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a4edbe10-94a4-4491-ade2-07990f73201e" mode="Opaque" x="199" y="0" width="183" height="18" forecolor="#000000"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Dotted" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dotted" lineColor="#CC0000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a4edbe10-94a4-4491-ade2-07990f73201e" mode="Opaque" x="382" y="0" width="173" height="18" forecolor="#000000"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Dotted" lineColor="#CC0000"/>
+					<rightPen lineWidth="1.0" lineStyle="Dotted" lineColor="#CC0000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chart}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="651d9eea-57f9-44c6-b18c-6c17f9d9a63e" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="1f0c1097-71a9-4a50-9801-b07b0fd828c1" style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="7f6ceaf4-1f35-480e-8a5e-f005ef8a1f92" style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="ae7dc772-bb0b-4317-93b7-926be53954d8" style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
